@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.poc.data.IVehicle" table="VEHICLE" discriminator-value="vehicle">  
+    <id name="id">  
+     <generator class="assigned"></generator>  
+    </id>  
+            
+    <discriminator column="type" type="string"></discriminator>  
+    
+    <subclass name="com.poc.data.Car" discriminator-value="Car">
+    	<property name="model" ></property>
+    	<property name="color" ></property>
+    	<property name="weight" ></property>
+    	<property name="speed" ></property>
+    </subclass>
+    
+    <subclass name="com.poc.data.Bike" discriminator-value="Bike">
+    	<property name="model" ></property>
+    	<property name="color" ></property>
+    	<property name="weight" ></property>
+    	<property name="speed" ></property>
+    </subclass>
+  </class>  
+            
+ </hibernate-mapping>

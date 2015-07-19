@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+  <hibernate-mapping package="hbm">  
+  <class name="com.poc.data.FellowEmployee" table="FELLOW_EMPLOYEE">  
+    <id name="empId">  
+     <generator class="assigned"></generator>  
+    </id>
+    <property name="empName" ></property>
+    <property name="age" ></property>
+    <property name="salary" ></property>
+    <many-to-one name="vehicle" class="com.poc.data.IVehicle" column="vehicle" cascade="save-update"></many-to-one>
+   </class>
+   </hibernate-mapping>
+    
